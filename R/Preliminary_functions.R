@@ -30,7 +30,7 @@ tr_test_st <- function(data_in)
 ## Better function is to use hotdeck of VIM for mixed data:
 impute_manual <- function(data_in)
 {
-return(hotdeck(data_in, imp_var=FALSE))
+return(VIM::hotdeck(data_in, imp_var=FALSE))
 }
 
 
