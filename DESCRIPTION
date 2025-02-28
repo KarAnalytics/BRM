@@ -1,16 +1,54 @@
 Package: BRM
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Identifies blockwise missing patterns in data and enables use of predictive models for it. 
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Karthik", "Srinivasan",
+      email = "karthiks@ku.edu",
       role = c("aut", "cre")
+    ),
+	    person(
+      "Faiz", "Currim",
+      email = "currim@arizona.edu",
+      role = c("aut")
+    ),
+	    person(
+      "Sudha", "Ram",
+      email = "sram@arizona.edu",
+      role = c("aut")
     )
+
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Incomplete data with blockwise missing patterns are commonly encountered in analytics, and solutions typically entail listwise deletion or    imputation. However, as the proportion of missing values in input features increases, listwise or columnwise deletion leads to information loss, whereas    imputation diminishes the integrity of the training data set. We present the blockwise reduced modeling (BRM) method for analyzing blockwise missing patterns, which adapts and improves on the notion of reduced modeling proposed by Friedman, Kohavi, and Yun in 1996 as lazy decision trees. In contrast to the original idea of reduced modeling of delaying model induction until a prediction is required, our method is significantly faster because it exploits the blockwise missing patterns to pretrain ensemble models that require minimum imputation of data. Models are pretrained over the overlapping subsets of an incomplete data set that contain only populated values. During prediction, each test instance is mapped to one of these models based on its feature-missing pattern. BRM can be applied to any supervised learning model for tabular data. We benchmark the predictive performance of BRM using simulations of blockwise missing patterns on three complete data sets from public repositories. Thereafter, we evaluate its utility on three data sets with actual blockwise missing patterns. We demonstrate that BRM is superior to most existing benchmarks in terms of predictive performance for linear and nonlinear models. It also scales well and is more reliable than existing benchmarks for making predictions with blockwise missing pattern data.
+License: GNU GENERAL PUBLIC LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+	mice,
+	randomForest,
+	Hmisc,
+	gbm,
+	ipred,
+	data.table,
+	Metrics,
+	gtools,
+	MASS,
+	caret,
+	rpart,
+	tree,
+	DescTools,
+	dplyr,
+	partykit,
+	glmnet,
+	grplasso,
+	purrr,
+	scout,
+	janitor,
+	OneR,
+	softImpute,
+	reticulate,
+	e1071,
+	earth,
+	ranger,
+	VIM
