@@ -16,3 +16,5 @@
 hello <- function() {
   print("Hello, world!")
 }
+
+usethis::use_testthat()
